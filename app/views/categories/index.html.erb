@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="row">
+  <div class="col">
+    <h1 class="display-6">Categories</h1>
+  </div>
+  <div class="col-auto">
+    <%= link_to "New item", new_category_path, class: "btn btn-primary", data: { turbo_frame: "modal" } %>
+  </div>
+</di>
+
+<ul class="list-group mt-3">
+  <%= turbo_frame_tag "categories" do %>
+    <% if @categories.blank? %>
+      <h1 class="display-6">Şu wagta çenli hiç Category girizilmedik...</h1>
+    <% end %>
+    <%= render @categories %>
+  <% end %>
+</ul>

@@ -1,0 +1,13 @@
+<main class="container">
+  <%= link_to "Back to categories", categories_path %>
+
+  <%= turbo_frame_tag "modal" do %>
+    <h1 class="display-6">
+      New Category
+    </h1>
+
+    <div class="modal-body">
+      <%= render "categories/form", category: @category %>
+    </div>
+  <% end %>
+</main>
