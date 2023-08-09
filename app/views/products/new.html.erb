@@ -1,0 +1,11 @@
+<main class="container">
+  <%= link_to "Products", products_path %>
+
+  <%= turbo_frame_tag "modal" do %>
+    <h1 class="display-5 ms-3 mt-2">New Product</h1>
+
+    <div class="modal-body">
+      <%= render "products/form", product: @product %>
+    </div>
+  <% end %>
+</main>
